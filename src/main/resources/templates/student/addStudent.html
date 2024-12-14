@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Student</title>
+</head>
+<body>
+Add Student
+
+<form action="/students/add" method="post">
+Name: <input type="text" name="name"/> <br>
+Surname: <input type="number" name="surname"/> <br>
+Email:<input type="number" name="email"/> <br>
+Lesson: <select name="lesson.id">
+  <option th:each="lesson: ${lessons}"
+          th:value="${lesson.id}"
+          th:text="${lesson.name}">
+  </option>
+</select><br>
+<input type="submit" value="Add">
+</form>
+</body>
+</html>

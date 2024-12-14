@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher</title>
+</head>
+<body>
+Teachers | <a href="/teachers/add">Add</a>
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>surname</th>
+        <th>email</th>
+        <th>action</th>
+    </tr>
+
+    <tr th:each="teacher : ${teachers}">
+        <td th:text="${teacher.getId()}"></td>
+        <td th:text="${teacher.getName()}"></td>
+        <td th:text="${teacher.getSurname()}"></td>
+        <td th:text="${teacher.getEmail()}"></td>
+        <td><a th:href="@{/teachers/delete(id=${teacher.id})}">Delete</a></td>
+    </tr>
+</table>
+</body>
+</html>
